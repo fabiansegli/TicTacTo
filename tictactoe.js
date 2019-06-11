@@ -20,12 +20,12 @@ const play = function(boxNumber){
 
     box.textContent = turn
     box.style.color = '#444'
-    game[boxNumber] = turn
+    game[boxNumber - 1] = turn
 
     for (let i = 0; i < win.length; i++) {
-      const match1 = game[win[i][0]]
-      const match2 = game[win[i][1]]
-      const match3 = game[win[i][2]]
+      const match1 = game[win[i][0]-1]
+      const match2 = game[win[i][1]-1]
+      const match3 = game[win[i][2]-1]
       if (match1 === turn && match2 === turn && match3 === turn) {
         const title = document.getElementById('box5')
         const gameBoard = document.getElementById('container')
